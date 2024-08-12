@@ -1,0 +1,27 @@
+{
+  "name": "test-qstash-rate-limit-standalone",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "volta": {
+    "node": "20.14.0",
+    "npm": "10.7.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.0.1",
+    "@typescript-eslint/parser": "^8.0.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.1.1",
+    "tsx": "^4.16.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@upstash/ratelimit": "^1.1.3",
+    "@upstash/redis": "^1.34.0",
+    "dotenv": "^16.4.5"
+  }
+}
