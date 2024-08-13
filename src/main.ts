@@ -17,10 +17,19 @@ async function main() {
   // Or use a userID, apiKey or ip address for individual limits.
   const identifier = "api";
 
-  const { success, remaining } = await ratelimit.limit(identifier);
-  console.log({ success, remaining });
+  // eslint-disable-next-line no-constant-condition
+  while (true) {
+    const { success, remaining } = await ratelimit.limit(identifier);
 
-  await new Promise((resolve) => setTimeout(resolve, 5_000));
+    if (!success) {
+      console.log(new Date(), { success, remaining }, "BOUNCING");
+      await new Promise((resolve) => setTimeout(resolve, 12_000));
+    } else {
+      console.log(new Date(), { success, remaining }, "Processing");
+      // await new Promise((resolve) => setTimeout(resolve, 5_000));
+      break;
+    }
+  }
 }
 
 main().catch(console.log);
